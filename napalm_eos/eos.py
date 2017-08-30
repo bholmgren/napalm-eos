@@ -807,7 +807,7 @@ class EOSDriver(NetworkDriver):
             interface = py23_compat.text_type(neighbor.get('interface'))
             mac_raw = neighbor.get('hwAddress')
             ip = py23_compat.text_type(neighbor.get('address'))
-            age = float(neighbor.get('age'))
+            age = float(neighbor.get('age', 0.0))
             arp_table.append(
                 {
                     'interface': interface,
